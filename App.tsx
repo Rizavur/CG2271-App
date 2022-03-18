@@ -17,10 +17,11 @@ export default function App() {
   const fetchData = async (input: string) => {
     if (ipAddress) {
       try {
-        const resp = await fetch(ipAddress + "/" + input);
-        const data = await resp.json();
-        setResponseText(data);
-        // setResponseText(ipAddress + "/" + input);
+        const response = await fetch("http://" + ipAddress + "/" + input, {
+          method: "GET",
+        });
+        const htmlResponse = await response.text();
+        setResponseText(htmlResponse);
       } catch (e) {
         setResponseText("There was an error");
       }
