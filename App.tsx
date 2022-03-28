@@ -153,6 +153,20 @@ export default function App() {
       </View>
       <Text style={styles.text}>Response:</Text>
       <Text style={styles.text}>{responseText}</Text>
+      <View style={{ flexDirection: "row" }}>
+        <IconButton
+          style={{ ...styles.smallButton, marginRight: 20 }}
+          size={40}
+          icon="music"
+          onPress={() => fetchData("playMusic")}
+        />
+        <IconButton
+          style={{ ...styles.smallButton, marginLeft: 20 }}
+          size={40}
+          icon="music-off"
+          onPress={() => fetchData("offMusic")}
+        />
+      </View>
     </ScrollView>
   );
 }
