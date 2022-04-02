@@ -155,13 +155,25 @@ export default function App() {
       <Text style={styles.text}>{responseText}</Text>
       <View style={{ flexDirection: "row" }}>
         <IconButton
-          style={{ ...styles.smallButton, marginRight: 20 }}
+          style={{ ...styles.smallButton }}
+          size={40}
+          icon="power"
+          onPress={() => fetchData("autoOn")}
+        />
+        <IconButton
+          style={{ ...styles.smallButton, marginRight: 30 }}
+          size={40}
+          icon="power-off"
+          onPress={() => fetchData("autoOff")}
+        />
+        <IconButton
+          style={{ ...styles.smallButton }}
           size={40}
           icon="music"
           onPress={() => fetchData("playMusic")}
         />
         <IconButton
-          style={{ ...styles.smallButton, marginLeft: 20 }}
+          style={{ ...styles.smallButton }}
           size={40}
           icon="music-off"
           onPress={() => fetchData("offMusic")}
