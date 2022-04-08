@@ -54,8 +54,8 @@ export default function App() {
         <Button disabled style={styles.button}>
           {" "}
         </Button>
-        {/* <TouchableOpacity
-          onPressIn={() => fetchData("forwardLeft")}
+        <TouchableOpacity
+          onPressIn={() => fetchData("smallLeft")}
           onPressOut={() => {
             fetchData("stop");
           }}
@@ -65,7 +65,7 @@ export default function App() {
             size={40}
             icon="arrow-top-left"
           />
-        </TouchableOpacity> */}
+        </TouchableOpacity>
         <TouchableOpacity
           onPressIn={() => fetchData("forward")}
           onPressOut={() => {
@@ -77,8 +77,8 @@ export default function App() {
         <Button disabled style={styles.button}>
           {" "}
         </Button>
-        {/* <TouchableOpacity
-          onPressIn={() => fetchData("forwardRight")}
+        <TouchableOpacity
+          onPressIn={() => fetchData("smallRight")}
           onPressOut={() => {
             fetchData("stop");
           }}
@@ -88,7 +88,7 @@ export default function App() {
             size={40}
             icon="arrow-top-right"
           />
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </View>
       <View style={styles.buttonView}>
         <TouchableOpacity
@@ -160,12 +160,19 @@ export default function App() {
           icon="power"
           onPress={() => fetchData("autoOn")}
         />
-        <IconButton
-          style={{ ...styles.smallButton, marginRight: 30 }}
-          size={40}
-          icon="power-off"
-          onPress={() => fetchData("autoOff")}
-        />
+        <TouchableOpacity
+          onPressIn={() => fetchData("smallForward")}
+          onPressOut={() => {
+            fetchData("stop");
+          }}
+        >
+          <IconButton
+            style={{ ...styles.smallButton, marginRight: 30 }}
+            size={40}
+            icon="arrow-up"
+          />
+        </TouchableOpacity>
+
         <IconButton
           style={{ ...styles.smallButton }}
           size={40}
@@ -196,7 +203,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   button: {
-    marginHorizontal: 10,
+    // marginHorizontal: 10,
     marginVertical: 0,
   },
   smallButton: {
